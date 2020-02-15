@@ -30,13 +30,6 @@ class TwitterInteraction:
 
         
         while exit_query == False:
-            # def limit_handler(cursor):
-            #     try:
-            #         yield cursor
-            #     except tweepy.RateLimitError:
-            #         print("Rate limiting error. Waiting to response..")
-            #         time.sleep(901)
-            
             try:
                 tweets = tweepy.Cursor(api.home_timeline, tweet_mode='extended').items(limit=10)
 
@@ -75,39 +68,7 @@ class TwitterInteraction:
             #exit_query = True
 
 
-
-
-class Test:
-    def __init__(self):
-        pass
-
-    def var_(self):
-        a = "my"
-        b = "beautiful"
-        s = 'Hellow {} {} world!'.format(a, b)
-        return s
-
-class OutPut(Test):
-    def __init__(self):
-        t = Test()
-        self.my_var = t.var_()
-    
-    def prt(self):
-        self.data = [1]
-        if self.data:
-            print("smt")
-        else:
-            print("None")
-
-
-
-
 if __name__ == "__main__":
-    # p = OutPut()
-    # p.prt()
     t = TwitterInteraction()
     t.twee_auth()
-    #twee_auth()
-    #check_db()
-    #TwitterInteraction.twee_auth()
     
