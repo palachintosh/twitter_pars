@@ -1,24 +1,18 @@
 import tweepy
-import sqlite3
 import time
 import datetime
 from db_work import SaveTweets
 
 
 class TwitterInteraction:
-    def __init__(self, log=False):
-        # self.api_key = api_key
-        # self.api_key_secret = api_key_secret
-        # self.access_token = access_token
-        # self.access_token_secret = access_token_secret
+    def __init__(self, api_key=None, api_key_secret=None, access_token=None, access_token_secret=None, log=False):
+        self.api_key = api_key
+        self.api_key_secret = api_key_secret
+        self.access_token = access_token
+        self.access_token_secret = access_token_secret
         self.log = log
 
     def twee_auth(self):
-        self.api_key = "uuLZHNQFWSCHjPPMdbQ8g3OMg"
-        self.api_key_secret = "URsheOuOCApX0WTnpgldUvOsPmzcggE1hoDTlgb4BHa0EwAYO2"
-        self.access_token = "1087005246260424706-02Y7XOnt42WCtNbzcpvjZGWNsjwL6S"
-        self.access_token_secret = "g4SMV2t5oyewfrcdit8tDeUoE2TYzQIZuuCOUMPN1Z7Bd"
-
         auth = tweepy.OAuthHandler(self.api_key, self.api_key_secret)
         auth.set_access_token(self.access_token, self.access_token_secret)
 
